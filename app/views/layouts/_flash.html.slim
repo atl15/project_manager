@@ -1,0 +1,9 @@
+- if notice
+  .alert.alert-success.text-center.rounded-0.sticky-top
+    = flash[:notice]
+    button.btn-close.float-end type="button" data-bs-dismiss="alert"
+
+- if alert
+  .alert.alert-danger.text-center.rounded-0.sticky-top
+    = flash[:alert]
+    button.btn-close.float-end type="button" data-bs-dismiss="alert"

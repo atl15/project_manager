@@ -1,0 +1,13 @@
+nav.navbar.navbar-expand-lg.bg-body-tertiary
+  .container
+    = link_to "Project Manager", root_path, class: "navbar-brand"
+
+    button.navbar-toggler.ms-auto [
+      type="button" data-bs-toggle="collapse"
+      data-bs-target="#collapseNavbar"]
+      span.navbar-toggler-icon
+    .navbar-collapse.collapse#collapseNavbar
+      ul.navbar-nav.ms-auto
+        li.nav-item
+          = button_to "Sign Out", destroy_user_session_path,
+            class: "nav-link", method: :delete
