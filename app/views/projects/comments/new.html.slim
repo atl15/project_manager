@@ -1,0 +1,10 @@
+= turbo_frame_tag @project, :new_comment
+  h4.my-3 New Comment
+
+  = form_with model: [@project, @comment] do |f|
+    .mb-3
+      = f.label :text, class: "form-label"
+      = f.text_area :text, class: "form-control"
+      = error_on(f.object, :text)
+
+    = f.submit class: "btn btn-primary"

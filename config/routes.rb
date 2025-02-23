@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :projects, only: %i[index new create show] do
     scope module: :projects do
       resources :status_changes, only: %i[new create]
+      resources :comments, only: %i[new create]
     end
   end
 
