@@ -1,0 +1,9 @@
+.my-5
+  h1 = "#{@project} ##{@project.id}"
+
+h4.mt-3
+  span.badge.text-decoration-none[class="#{project_status_badge(@project)}"]
+    = t @project.status, scope: "activerecord.attributes.project.statuses"
+
+p.my-5
+  = @project.text
