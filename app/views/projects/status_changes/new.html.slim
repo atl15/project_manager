@@ -1,0 +1,7 @@
+= turbo_frame_tag @project, :status
+  = form_with url: project_status_changes_path(@project),
+    data: { controller: "form-submit" } do |f|
+    .row
+      .col-auto
+        = f.select :status, project_statuses, { selected: @project.status },
+          class: "form-select", data: { action: "form-submit#submit" }

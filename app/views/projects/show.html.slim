@@ -1,9 +1,12 @@
 .my-5
   h1 = "#{@project} ##{@project.id}"
 
-h4.mt-3
-  span.badge.text-decoration-none[class="#{project_status_badge(@project)}"]
-    = t @project.status, scope: "activerecord.attributes.project.statuses"
+= turbo_frame_tag @project, :status
+  h4.mt-3
+    = link_to t(@project.status,
+      scope: "activerecord.attributes.project.statuses"),
+      new_project_status_change_path(@project),
+      class: "badge text-decoration-none #{project_status_badge(@project)}"
 
 p.my-5
   = @project.text
