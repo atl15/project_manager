@@ -16,4 +16,8 @@ h1.my-5 New Project
     = f.text_area :text, class: "form-control"
     = error_on(f.object, :text)
 
-  = f.submit class: "btn btn-primary"
+  .row
+    .col-auto
+      = f.submit class: "btn btn-primary"
+    .col
+      = link_to "Cancel", projects_path, class: "btn btn-danger"

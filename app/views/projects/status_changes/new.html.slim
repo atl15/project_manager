@@ -5,3 +5,5 @@
       .col-auto
         = f.select :status, project_statuses, { selected: @project.status },
           class: "form-select", data: { action: "form-submit#submit" }
+      .col
+        = link_to "Cancel", project_path(@project), class: "btn btn-danger"
