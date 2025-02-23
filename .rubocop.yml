@@ -20,3 +20,14 @@ Style/FrozenStringLiteralComment:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+RSpecRails/InferredSpecType:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: true
+  Max: 20
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - spec/features/**/*

@@ -33,3 +33,8 @@ group :development do
   gem "slim_lint", require: false
   gem "web-console"
 end
+
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+end

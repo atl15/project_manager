@@ -62,4 +62,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+
+  # TODO: Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
+  config.before(:each, type: :feature) do
+    Rails.application.reload_routes_unless_loaded
+  end
 end
