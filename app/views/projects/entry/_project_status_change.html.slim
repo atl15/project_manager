@@ -1,0 +1,6 @@
+.card.mt-3[id="#{dom_id(entry)}"]
+  .card-body
+    | #{entry.user} changed status
+    |  from: #{t entry.project_status_change.from, scope: "activerecord.attributes.project.statuses"}
+    |  to: #{t entry.project_status_change.to, scope: "activerecord.attributes.project.statuses"}
+    |  at #{l entry.created_at, format: :short}

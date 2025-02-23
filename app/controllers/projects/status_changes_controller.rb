@@ -5,7 +5,12 @@ class Projects::StatusChangesController < ApplicationController
 
   def create
     project = Project.find(params[:project_id])
-    project.update!(status: params[:status])
+
+    ProjectStatusChange::Creator.new(
+      status: params[:status],
+      project: project,
+      user: current_user
+    ).perform
     redirect_to project_path(project)
   end
 end
