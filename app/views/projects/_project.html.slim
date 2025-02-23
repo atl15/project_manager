@@ -1,0 +1,6 @@
+tr
+  td = project.id
+  td = project.name
+  td = t project.status, scope: "activerecord.attributes.project.statuses"
+  td = l project.created_at, format: :short
+  td = l project.updated_at, format: :short
