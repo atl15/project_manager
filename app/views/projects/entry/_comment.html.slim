@@ -1,0 +1,8 @@
+.card.mt-3[id="#{dom_id(entry.comment)}"]
+  .card-header.d-flex
+    = entry.user
+
+    .ms-auto
+      = l entry.created_at, format: :short
+  .card-body
+    = entry.comment

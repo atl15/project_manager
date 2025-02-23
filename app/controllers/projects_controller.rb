@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @entries = @project.entries.includes(:user, :entryable).order(created_at: :asc)
   end
 
   def new

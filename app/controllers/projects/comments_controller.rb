@@ -8,7 +8,8 @@ class Projects::CommentsController < ApplicationController
     @project = Project.find(params[:project_id])
     @comment = Comment.new(comment_params)
 
-    if @comment.save
+    if @comment.valid?
+      Entry.create!(project: @project, user: current_user, entryable: @comment)
       redirect_to project_path(@project)
     else
       render :new, status: :unprocessable_entity

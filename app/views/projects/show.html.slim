@@ -1,3 +1,5 @@
+= turbo_stream_from @project, "entries"
+
 .my-5
   h1 = "#{@project} ##{@project.id}"
 
@@ -10,6 +12,9 @@
 
 p.my-5
   = @project.text
+
+#entries
+  = render partial: "projects/entry", collection: @entries
 
 = turbo_frame_tag dom_id @project, :new_comment
   = link_to "Add a comment", new_project_comment_path(@project),
