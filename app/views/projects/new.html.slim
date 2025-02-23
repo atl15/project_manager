@@ -1,0 +1,19 @@
+h1.my-5 New Project
+
+= form_with model: @project do |f|
+  .mb-3
+    = f.label :name, class: "form-label"
+    = f.text_field :name, class: "form-control"
+    = error_on(f.object, :name)
+
+  .mb-3
+    = f.label :status, class: "form-label"
+    = f.select :status, project_statuses, {}, class: "form-select"
+    = error_on(f.object, :status)
+
+  .mb-3
+    = f.label :text, class: "form-label"
+    = f.text_area :text, class: "form-control"
+    = error_on(f.object, :text)
+
+  = f.submit class: "btn btn-primary"
