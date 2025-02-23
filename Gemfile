@@ -8,6 +8,7 @@ gem "pg", "~> 1.1"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.1"
+gem "slim-rails"
 gem "solid_cable"
 gem "solid_cache"
 gem "solid_queue"
@@ -28,5 +29,6 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-rspec_rails", require: false
+  gem "slim_lint", require: false
   gem "web-console"
 end
