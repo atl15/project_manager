@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "bootsnap", require: false
 gem "cssbundling-rails"
+gem "devise"
 gem "importmap-rails"
 gem "jbuilder"
 gem "pg", "~> 1.1"
