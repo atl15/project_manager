@@ -1,15 +1,22 @@
-h2 Log in
+.d-flex.flex-column.min-vh-100.justify-content-center.align-items-center
+  .card.mt-5.w-50
+    .card-body.m-5
+      = form_for resource, as: resource_name, url: session_path(resource_name),
+        html: { role: "form" } do |f|
+        h2.card-title Log in
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+        .mt-3
+          = f.label :email, class: "form-label"
+          = f.email_field :email, autofocus: true,
+            autocomplete: "email", class: "form-control"
 
-  .field
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: "current-password"
+        .mt-3
+          = f.label :password, class: "form-label"
+          = f.password_field :password, class: "form-control"
 
-  .actions
-    = f.submit "Log in"
+        - if alert
+          .mt-3.alert.alert-danger
+            = flash[:alert]
+
+        .mt-4
+          = f.button "Log in", class: "btn btn-primary w-100"
